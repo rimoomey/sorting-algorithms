@@ -1,5 +1,6 @@
 import { bubbleSort } from "./scripts/bubbleSort.js";
 import { selectionSort } from "./scripts/selectionSort.js";
+import { mergeSort } from "./scripts/mergeSort.js";
 
 console.log("BUBBLE: ");
 console.log(bubbleSort([2, 1, 3, 4, 5]));
@@ -11,13 +12,26 @@ console.log(
 );
 
 console.log("SELECTION: ");
-console.log(selectionSort([2, 1, 3, 4, 5]));
+console.log(selectionSort([1, 3, 5, 2, 4]));
 console.log(selectionSort([2, 1, 4, 5, 3]));
 console.log(
   "Average time in milliseconds for array of length 100: ",
   sortBenchmark(selectionSort),
   "\n"
 );
+
+// let arr1 = [1, 3, 5, 2, 4]
+// let arr2 = [2, 1, 4, 3, 5]
+// console.log("MERGE: ");
+// mergeSort(arr1, [], 0, 4)
+// console.table(arr1);
+// mergeSort(arr2, [], 0, 4)
+// console.table(arr2);
+
+let arr1 = [1, 3, 5];
+let arr2 = [2, 4, 6];
+console.log("MERGE: ", mergeSort([1, 3, 5, 2, 4, 6]));
+console.log("MERGE: ", mergeSort([3, 7, 5, 4, 2, 6]));
 
 function sortBenchmark(fn) {
   const beginning = new Date().getTime();
